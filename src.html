@@ -4,16 +4,6 @@
 document.write( window.location ); // DOM_XSS
 document.write( "cheeseburger" );
 const searchParams = new URLSearchParams(window.location.search);
-
-// another type
-var a = document.createElement('a');
-var linkText = document.createTextNode("Type is " + searchParams.get("type"));
-a.appendChild(linkText);
-a.title = "my title text";
-a.href = "http://example.com/?type=" + decodeURI(searchParams.get("type"));
-document.body.appendChild(a);
-
-// final type?
 document.write( "<a href='#'>This link goes to type " + decodeURI(searchParams.get("type")) + "</a>" );
 </script>
 </body>
