@@ -6,10 +6,10 @@ document.write( "cheeseburger" );
 const searchParams = new URLSearchParams(window.location.search);
   
 var a = document.createElement('a');
-var linkText = document.createTextNode("Type is " & searchParams.get("type"));
+var linkText = document.createTextNode("Type is " + searchParams.get("type"));
 a.appendChild(linkText);
 a.title = "my title text";
-a.href = "http://example.com/?type=" & searchParams.get("type") ;
+a.href = "http://example.com/?type=" + searchParams.get("type") ;
 document.body.appendChild(a);
 </script>
 </body>
